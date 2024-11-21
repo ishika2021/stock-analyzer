@@ -1,0 +1,11 @@
+.sidebar-wrapper{
+    width: 300px;
+    .selected-company-list{
+        display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            min-height: 48px;
+            align-items: center;
+        
+    }
+}
