@@ -5,7 +5,7 @@ import Chip from "../../components/Chip.jsx";
 import CheckboxList from "../../components/CheckboxList.jsx";
 import { SelectedCompaniesContext } from "../../context/SelectedCompaniesContext";
 import Button from "../../components/Button.jsx";
-import styles from "./styles.scss";
+import "./styles.scss";
 
 const Sidebar = () => {
   const { data, loading } = useContext(DataContext);
@@ -29,7 +29,7 @@ const Sidebar = () => {
       <div className="selected-company-list">
         {selectedCompanies.length > 0 ? (
           selectedCompanies.map((company, index) => (
-            <Chip value={company.company_name} />
+            <Chip value={company.company_name} key={index} />
           ))
         ) : (
           <p>No Selection..</p>

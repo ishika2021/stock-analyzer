@@ -1,6 +1,6 @@
 'use client'
 
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useContext} from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -9,7 +9,6 @@ import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import ShowChartIcon from '@mui/icons-material/ShowChart';
-import { useContext } from "react";
 import { SelectedCompaniesContext } from '../context/SelectedCompaniesContext';
 
 
@@ -17,17 +16,16 @@ export default function CheckboxList({list}) {
   const [checked, setChecked] = useState([]);
   const {updateCompanies,selectedCompanies} = useContext(SelectedCompaniesContext);
   
-  useEffect(()=>{
-    if(selectedCompanies.length<=0){
-      setChecked([])
-      
+  useEffect(() => {
+    if (selectedCompanies.length <= 0) {
+      setChecked([]);
     }
-  },[selectedCompanies.length<=0])
+  }, [selectedCompanies.length]);
   
   
   useEffect(()=>{
     updateCompanies(checked)
-  },[checked])
+  },[checked, updateCompanies])
 
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);
