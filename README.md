@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stock Analyzer 🏷️
 
-## Getting Started
+## Features ⭐⭐
+- Select one or multiple companies to view their financial data
+- Compare the data of multiple companies with tables and graphs.
+- Download the data in a specific date range in an Excel sheet
 
-First, run the development server:
+## Technologies Used 💻
+- Next JS
+- React JS
+- Context API
+- Material UI (Charts and Tables)
+- SCSS
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Project Structure 🏗️
+- **/components:** Reusable UI Components.
+- **/containers:** Components that handle logic and data flow
+- **/views:** Main views of the applications
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
+To run this project locally, follow these steps:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. **Clone the repository**:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/ishika2021/stock-analyzer.git
 
-## Learn More
+2. **Navigate to the project directory**:
 
-To learn more about Next.js, take a look at the following resources:
+     ```bash
+   cd stock-analyzer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Install dependencies:**:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+     ```bash
+   npm install
 
-## Deploy on Vercel
+3. **Start the development server::**:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+     ```bash
+   npm run dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Open your browser::**:
+
+     ```bash
+   http://localhost:3000
+
