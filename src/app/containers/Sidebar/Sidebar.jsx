@@ -15,7 +15,6 @@ const Sidebar = () => {
   );
 
   useEffect(() => {
-    console.log(data);
     if (data) {
       setCompanies(data.companies);
     }
@@ -37,8 +36,8 @@ const Sidebar = () => {
         )}
       </div>
       {selectedCompanies.length > 0 && (
-        <div>
-          <Button label="Clear All" action={handleClearAll} />
+        <div className="clear-all">
+          <Button label="Clear All" action={handleClearAll} size="small" />
         </div>
       )}
       <div className="company-list-wrapper">

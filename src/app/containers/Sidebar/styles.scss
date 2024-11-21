@@ -1,11 +1,20 @@
 .sidebar-wrapper{
     width: 300px;
+    height: 100%;
+    padding: 10px;
+    border-right: 1px solid grey;
     .selected-company-list{
         display: flex;
             flex-wrap: wrap;
             gap: 5px;
             min-height: 48px;
             align-items: center;
+            margin-left: 15px;
         
+    }
+    
+    .clear-all{
+        margin-top: 10px;
+        margin-left: 15px;
     }
 }
