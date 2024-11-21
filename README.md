@@ -44,4 +44,6 @@ To run this project locally, follow these steps:
 
      ```bash
    http://localhost:3000
-
+     
+## Deployment 🚀
+The project is deployed on Netlify. The live version is available at [Stock Analyzer](https://stock-analyzer-tool.netlify.app/).
