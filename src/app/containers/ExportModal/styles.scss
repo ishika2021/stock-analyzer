@@ -1,16 +1,32 @@
-.export-fields{
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    
-    p{
-        font-size: 12px;
-        color: rgb(236, 100, 100);
-    }
-    
-}
+.export-model-wrapper {
+    border-radius: 8px;
 
-.footer{
-    display: flex;
-    justify-content: flex-end;
+    .export-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .footer {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    @media (max-width: 786px) {
+        width: 480px !important;
+    }
+
+    @media (max-width: 480px) {
+        width: 190px !important;
+
+        .MuiButtonBase-root {
+            padding: 5px;
+            font-size: 12px;
+            height: 30px;
+        }
+    }
 }

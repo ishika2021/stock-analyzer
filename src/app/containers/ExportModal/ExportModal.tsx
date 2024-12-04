@@ -11,6 +11,7 @@ import * as XLSX from "xlsx";
 import { SelectedCompaniesContext } from "../../context/SelectedCompaniesContext";
 import "./styles.scss";
 import dayjs from "dayjs";
+import { CompanyData } from "../../types/commonTypes";
 
 export default function BasicModal() {
   const [open, setOpen] = useState(false);
@@ -84,12 +85,13 @@ export default function BasicModal() {
   const filterCompanyData = (range) => {
     const startRange = new Date(range[0]);
     const endRange = new Date(range[1]);
-    return selectedCompanies.map((company) => {
-      const filteredData = company.data.filter((obj) => {
+    return selectedCompanies.map((company: Company) => {
+      const filteredData = company.data?.filter((obj: CompanyData) => {
         const currentDate = new Date(obj.date);
 
         return currentDate >= startRange && currentDate <= endRange;
       });
+
       const obj = {
         name: company.company_name,
         data: filteredData,
@@ -122,7 +124,7 @@ export default function BasicModal() {
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, "Companies Data");
     XLSX.writeFile(workbook, "CompaniesData.xlsx");
-    handleClose()
+    handleClose();
   };
   return (
     <div>
@@ -137,7 +139,7 @@ export default function BasicModal() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={style} className="export-model-wrapper">
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Export The Data
           </Typography>
@@ -152,7 +154,7 @@ export default function BasicModal() {
             />
             <DateRange handleChange={handleDateChange} />
             <TextareaAutosize
-              minRows={5}
+              minRows={4}
               value={reason}
               onChange={handleReasonChange}
             />

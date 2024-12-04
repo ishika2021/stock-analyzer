@@ -1,6 +1,5 @@
 "use client";
 import "./styles.scss";
-import Button from "../../components/Button";
 import Table from "../../components/Table";
 import { SelectedCompaniesContext } from "../../context/SelectedCompaniesContext";
 import { useEffect, useState, useContext } from "react";
@@ -8,7 +7,7 @@ import BarChart from "../../components/BarChart";
 import LineChart from "../../components/LineChart";
 import ExportModal from "../ExportModal/ExportModal";
 const Dashboard = () => {
-  const [headers, setHeaders] = useState([
+  const [headers] = useState([
     "date",
     "total_shares",
     "promoters_holding",
@@ -23,7 +22,7 @@ const Dashboard = () => {
     "revenue_growth_yoy",
     "last_updated_date",
   ]);
-  const [rows, setRows] = useState([]);
+  const [rows, setRows] = useState<Company[]>([]);
   const { selectedCompanies } = useContext(SelectedCompaniesContext);
 
   useEffect(() => {
@@ -37,11 +36,10 @@ const Dashboard = () => {
         });
       });
       setRows(allCompanies);
-    }else {
-        setRows([])
+    } else {
+      setRows([]);
     }
   }, [selectedCompanies]);
-
 
   const getAverage = (data) => {
     if (!data.length) {
@@ -79,15 +77,15 @@ const Dashboard = () => {
       <div className="header">
         <ExportModal />
       </div>
-      <div className={rows.length<=0?'no-data':'board'}>
+      <div className={rows.length <= 0 ? "no-data" : "board"}>
         {rows.length > 0 ? (
           <>
             <Table headers={headers} rows={rows} />
             <BarChart companies={rows} />
             <LineChart companies={rows} />
           </>
-        ):(
-            <p>Select a company to show the statistics......</p>
+        ) : (
+          <p>Select a company to show the statistics......</p>
         )}
       </div>
     </section>

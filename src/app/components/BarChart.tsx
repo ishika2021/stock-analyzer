@@ -1,6 +1,9 @@
 import { BarChart } from "@mui/x-charts/BarChart";
+import "./styles.scss";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const CustomBarChart = ({ companies }) => {
+  const isSmallScreen = useMediaQuery('(max-width: 480px)');
   const xLabels = Object.keys(companies[0].data).filter((item) => {
     const labels = [
       "total_shares",
@@ -38,7 +41,6 @@ const CustomBarChart = ({ companies }) => {
           {
             data: xLabels,
             scaleType: "band",
-            categoryGapRatio: 0.5,
             label: "Revenue Metrics",
           },
         ]}
@@ -49,6 +51,16 @@ const CustomBarChart = ({ companies }) => {
         ]}
         leftAxis={{ disableLine: true, disableTicks: true }}
         bottomAxis={{ disableTicks: true }}
+        slotProps={{
+          legend: {
+            direction: 'row',
+            position: { vertical: 'top', horizontal: 'middle' },
+            padding: -5,
+            labelStyle: {
+              fontSize: isSmallScreen?10:14,
+            },
+          },
+        }}
       />
     </div>
   );

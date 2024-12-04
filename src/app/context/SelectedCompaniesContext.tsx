@@ -1,11 +1,22 @@
 "use client"
 import { createContext, useState } from "react";
-export const SelectedCompaniesContext = createContext();
+
+interface SelectedCompaniesContextType {
+    selectedCompanies: Company[];
+    setSelectedCompanies?: (selectedCompanies: Company[]) => void;
+    updateCompanies: (companies: Company[])=> void;
+}
+
+export const SelectedCompaniesContext = createContext<SelectedCompaniesContextType>({
+    selectedCompanies: [],
+    setSelectedCompanies: () => {},
+    updateCompanies: undefined
+});
 
 export const SelectedCompaniesProvider = ({children}) => {
     const [selectedCompanies, setSelectedCompanies] = useState([]);
     
-    const updateCompanies = (companies) => {
+    const updateCompanies = (companies: Company[]) => {
         if(companies){
             setSelectedCompanies(companies)
         }

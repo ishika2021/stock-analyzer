@@ -1,20 +1,48 @@
-.sidebar-wrapper{
+.sidebar-wrapper {
     width: 300px;
     height: 100%;
     padding: 10px;
     border-right: 1px solid grey;
-    .selected-company-list{
+
+    .selected-company-list {
         display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            min-height: 48px;
-            align-items: center;
-            margin-left: 15px;
-        
-    }
-    
-    .clear-all{
-        margin-top: 10px;
+        flex-wrap: wrap;
+        gap: 5px;
+        min-height: 48px;
+        align-items: center;
         margin-left: 15px;
+        padding: 5px;
+
+    }
+
+    .clear-all {
+        margin: 10px 0px 10px 15px;
+    }
+
+    @media (max-width: 786px) {
+        width: 150px;
+
+        .selected-company-list {
+            margin-left: 0px;
+            font-size: 14px;
+        }
+
+        .clear-all {
+            margin: 10px 0px 10px 0px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        width: 80px;
+
+        .list-item-text {
+            display: none;
+        }
+
+        .MuiButtonBase-root {
+            font-size: 12px;
+        }
     }
 }

@@ -1,10 +1,10 @@
 "use client";
 import { useContext, useEffect, useState } from "react";
-import { DataContext } from "../../context/DataContext.js";
-import Chip from "../../components/Chip.jsx";
-import CheckboxList from "../../components/CheckboxList.jsx";
+import { DataContext } from "../../context/DataContext";
+import Chip from "../../components/Chip";
+import CheckboxList from "../../components/CheckboxList";
 import { SelectedCompaniesContext } from "../../context/SelectedCompaniesContext";
-import Button from "../../components/Button.jsx";
+import Button from "../../components/Button";
 import "./styles.scss";
 
 const Sidebar = () => {
