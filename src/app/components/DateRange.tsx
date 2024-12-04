@@ -3,8 +3,9 @@ import { LocalizationProvider } from "@mui/x-date-pickers-pro/LocalizationProvid
 import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
 import { DateRangePicker } from "@mui/x-date-pickers-pro/DateRangePicker";
 import dayjs from "dayjs";
+import "./styles.scss";
 
-export default function DateRangePickerCalendarProp({ date, handleChange }) {
+export default function DateRangePickerCalendarProp({ handleChange }) {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer

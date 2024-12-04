@@ -4,11 +4,11 @@ import Button from '@mui/material/Button';
 import "./styles.scss";
 
 interface ButtonProps {
-  label: string;
-  action: ()=>{} | void;
-  isDisable: boolean;
-  variant: string;
-  size: string;
+  label?: string;
+  action?: ()=>{} | void;
+  isDisable?: boolean;
+  variant?: "text" | "outlined" | "contained";
+  size?: "small" | "medium" | "large";
 }
 
 export default function BasicButtons({label,action,isDisable, variant="outlined", size="medium"}: ButtonProps) {

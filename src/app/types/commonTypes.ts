@@ -1,4 +1,5 @@
 export interface CompanyData {
+    [x: string]: any;
     date: string;
     total_shares: number;
     promoters_holding: number;

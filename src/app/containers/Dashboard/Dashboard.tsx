@@ -7,7 +7,7 @@ import BarChart from "../../components/BarChart";
 import LineChart from "../../components/LineChart";
 import ExportModal from "../ExportModal/ExportModal";
 const Dashboard = () => {
-  const [headers, setHeaders] = useState([
+  const [headers] = useState([
     "date",
     "total_shares",
     "promoters_holding",

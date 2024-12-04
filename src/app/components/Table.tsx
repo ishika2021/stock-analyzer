@@ -30,7 +30,7 @@ export default function BasicTable({ rows, headers }) {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              {Object.values(row.data).map((value, index) => (
+              {Object.values(row.data).map((value: string, index:number) => (
                 <TableCell key={index} component="th" scope="row">
                   {value}
                 </TableCell>

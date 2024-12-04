@@ -1,8 +1,11 @@
 import * as React from "react";
 import { LineChart } from "@mui/x-charts/LineChart";
+import useMediaQuery from '@mui/material/useMediaQuery';
 import "./styles.scss";
 
+
 export default function BasicArea({ companies }) {
+  const isSmallScreen = useMediaQuery('(max-width: 480px)');
   const xLabels = Object.keys(companies[0].data).filter((item) => {
     if (
       item === "last_divident_per_share" ||
@@ -35,6 +38,17 @@ export default function BasicArea({ companies }) {
         ]}
         series={series}
         height={300}
+        slotProps={{
+          legend: {
+            direction: 'row',
+            position: { vertical: 'top', horizontal: 'middle' },
+            padding: -5,
+            itemGap:2,
+            labelStyle: {
+              fontSize: isSmallScreen?10:14,
+            },
+          },
+        }}
       />
     </div>
   );
