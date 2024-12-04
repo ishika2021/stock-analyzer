@@ -56,6 +56,7 @@ const CustomBarChart = ({ companies }) => {
             direction: 'row',
             position: { vertical: 'top', horizontal: 'middle' },
             padding: -5,
+            itemGap: 2,
             labelStyle: {
               fontSize: isSmallScreen?10:14,
             },
