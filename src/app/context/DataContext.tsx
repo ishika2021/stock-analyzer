@@ -1,9 +1,25 @@
 "use client"
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, ReactNode } from "react";
 
-export const DataContext = createContext();
+interface DataContextType {
+  data: any;
+  setData?: (data: any) => void;
+  loading: boolean;
+  setLoading?: (data: boolean) => void;
+}
 
-export const DataProvider = ({ children }) => {
+interface DataProviderType {
+  children: ReactNode;
+}
+
+export const DataContext = createContext<DataContextType>({
+  data: null,
+  setData:()=>{},
+  loading: false,
+  setLoading: () => {}
+});
+
+export const DataProvider = ({ children }: DataProviderType) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 

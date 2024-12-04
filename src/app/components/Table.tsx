@@ -15,7 +15,9 @@ export default function BasicTable({ rows, headers }) {
           <TableRow>
             <TableCell>Company</TableCell>
             {headers.map((header, index) => (
-              <TableCell key={index} align="right">{header}</TableCell>
+              <TableCell key={index} align="right">
+                {header}
+              </TableCell>
             ))}
           </TableRow>
         </TableHead>
@@ -28,7 +30,7 @@ export default function BasicTable({ rows, headers }) {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              {Object.values(row.data).map((value,index) => (
+              {Object.values(row.data).map((value, index) => (
                 <TableCell key={index} component="th" scope="row">
                   {value}
                 </TableCell>

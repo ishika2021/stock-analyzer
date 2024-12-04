@@ -122,7 +122,7 @@ export default function BasicModal() {
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, "Companies Data");
     XLSX.writeFile(workbook, "CompaniesData.xlsx");
-    handleClose()
+    handleClose();
   };
   return (
     <div>
@@ -137,7 +137,7 @@ export default function BasicModal() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={style} className="export-model-wrapper">
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Export The Data
           </Typography>
@@ -152,7 +152,7 @@ export default function BasicModal() {
             />
             <DateRange handleChange={handleDateChange} />
             <TextareaAutosize
-              minRows={5}
+              minRows={4}
               value={reason}
               onChange={handleReasonChange}
             />

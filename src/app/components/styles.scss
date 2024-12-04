@@ -1,0 +1,39 @@
+.checkbox-list-wrapper {
+    @media (max-width: 786px) {
+        .MuiListItemIcon-root {
+            min-width: 0px !important;
+        }
+    }
+}
+
+// --------------------- Chip ---------------------------
+
+.chip-wrapper {
+    @media (max-width: 786px) {
+        &.MuiChip-root {
+            height: 20px;
+            width: 70px;
+            font-size: 12px;
+        }
+    }
+
+}
+
+// --------------------- Bar Chart --------------------------
+
+.bar-chart-wrapper {
+    border: 1px solid rgb(88, 87, 87);
+    border-radius: 4px;
+    max-width: 100%;
+    text-align: center;
+
+    h6 {
+        margin: 5px 0px;
+    }
+}
+
+// --------------------- Line Chart ---------------------------
+
+.line-chart-wrapper {
+    @extend .bar-chart-wrapper;
+}

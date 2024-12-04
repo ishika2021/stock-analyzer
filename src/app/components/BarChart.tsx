@@ -1,4 +1,5 @@
 import { BarChart } from "@mui/x-charts/BarChart";
+import "./styles.scss";
 
 const CustomBarChart = ({ companies }) => {
   const xLabels = Object.keys(companies[0].data).filter((item) => {
