@@ -58,6 +58,7 @@ export default function CheckboxList({ list }) {
               </IconButton>
             }
             disablePadding
+            className={checked.includes(value) ? "item-selected" : ""}
           >
             <ListItemButton
               role={undefined}

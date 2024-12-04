@@ -36,13 +36,16 @@
 
     @media (max-width: 480px) {
         width: 80px;
-
-        .list-item-text {
+        
+        svg{
             display: none;
         }
-
+        .MuiCheckbox-root{
+            padding: 0px;
+        }
         .MuiButtonBase-root {
             font-size: 12px;
+            padding-right: 0px !important;
         }
     }
 }
