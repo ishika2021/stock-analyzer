@@ -27,7 +27,7 @@ export const DataProvider = ({ children }: DataProviderType) => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch("https://dev-l0txzp7vr8mu6a0.api.raw-labs.com/api/3"); 
+        const response = await fetch("https://dummyjson.com/c/cb8e-db16-4c8b-80a3"); 
         const result = await response.json();
         setData(result);
         setLoading(false);
